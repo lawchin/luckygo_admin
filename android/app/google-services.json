@@ -1,0 +1,76 @@
+{
+  "project_info": {
+    "project_number": "140543441560",
+    "project_id": "luckygo2-2571c",
+    "storage_bucket": "luckygo2-2571c.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:140543441560:android:bc015ec566d0db4f1e2eed",
+        "android_client_info": {
+          "package_name": "com.bbkk.luckygo_admin"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBr2bdTwwE-x9PyHSArUbCgZ_BsDupqmfA"
+        },
+        {
+          "current_key": "AIzaSyDa5S3_IbRkjAJsH53VIXca0ZPLm9WcSHw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:140543441560:android:47846950971268131e2eed",
+        "android_client_info": {
+          "package_name": "com.bbkk.luckygo_pemandu"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBr2bdTwwE-x9PyHSArUbCgZ_BsDupqmfA"
+        },
+        {
+          "current_key": "AIzaSyDa5S3_IbRkjAJsH53VIXca0ZPLm9WcSHw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:140543441560:android:9b8a889be6302dbe1e2eed",
+        "android_client_info": {
+          "package_name": "com.bbkk.luckygo_penumpang"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBr2bdTwwE-x9PyHSArUbCgZ_BsDupqmfA"
+        },
+        {
+          "current_key": "AIzaSyDa5S3_IbRkjAJsH53VIXca0ZPLm9WcSHw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

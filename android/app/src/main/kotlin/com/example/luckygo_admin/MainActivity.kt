@@ -1,4 +1,4 @@
-package com.example.luckygo_admin
+package com.bbkk.luckygo_admin
 
 import io.flutter.embedding.android.FlutterActivity
 

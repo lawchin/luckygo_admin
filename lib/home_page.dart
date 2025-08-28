@@ -5,6 +5,24 @@ import 'package:luckygo_admin/active_deposit.dart';
 import 'package:luckygo_admin/geo_fencing/geo_fencing_page.dart';
 import 'package:luckygo_admin/global.dart';
 
+String getFormattedDate() {
+  final now = DateTime.now();
+  final day = now.day.toString().padLeft(2, '0');
+  final month = now.month.toString().padLeft(2, '0');
+  final year = now.year.toString().substring(2, 4);
+
+  int hour = now.hour;
+  final minute = now.minute.toString().padLeft(2, '0');
+  final second = now.second.toString().padLeft(2, '0');
+
+  final period = hour >= 12 ? 'PM' : 'AM';
+  hour = hour % 12;
+  if (hour == 0) hour = 12; // 12 AM or 12 PM
+
+  final hourStr = hour.toString().padLeft(2, '0');
+
+  return '$day$month$year $hourStr$minute$second$period';
+}
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});

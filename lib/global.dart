@@ -10,3 +10,6 @@ String loggedUser = '';
 
 TextEditingController areaNameController = TextEditingController();
 // Add more global variables below as needed
+
+String senderPhoneNumber = '';
+String penghantar = '';

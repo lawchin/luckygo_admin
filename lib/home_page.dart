@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:luckygo_admin/active_deposit.dart';
 import 'package:luckygo_admin/geo_fencing/geo_fencing_page.dart';
 import 'package:luckygo_admin/global.dart';
+import 'package:luckygo_admin/help_center/customer_service.dart';
+import 'package:luckygo_admin/new_driver/new_driver.dart';
 
 String getFormattedDate() {
   final now = DateTime.now();
@@ -39,10 +41,10 @@ class HomePage extends StatelessWidget {
         child: Column(
           children: [
 
-            Stack(
+            Stack(// Active deposit
               children: [
                 SizedBox(
-                  width:200,
+                  width:260,
                   child: ElevatedButton(
                     child: Text(
                       'Active Deposits',
@@ -58,7 +60,7 @@ class HomePage extends StatelessWidget {
                     }
                   ),
                 ),
-              Positioned(
+              Positioned(// NUMBERING
                 right: 0,
                 top: 0,
                 bottom: 0,
@@ -103,12 +105,9 @@ class HomePage extends StatelessWidget {
             ],
           ),
 
-
-
-
-            SizedBox(
-              width: 200,
-              child: ElevatedButton(// Geo Fencing
+            SizedBox(// Geo Fencing
+              width: 260,
+              child: ElevatedButton(
                 onPressed: () {
                   Navigator.push(
                     context,
@@ -120,6 +119,137 @@ class HomePage extends StatelessWidget {
                 child: const Text('Geo Fencing'),
               ),
             ),
+          
+            Stack(// Customer service
+              children: [
+                SizedBox(
+                  width:260,
+                  child: ElevatedButton(
+                    child: Text(
+                      'Customer Service',
+                      
+                    ),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const CustomerService(),
+                        ),
+                      );
+                    }
+                  ),
+                ),
+              Positioned(// NUMBERING
+                right: 0,
+                top: 0,
+                bottom: 0,
+                child: StreamBuilder<int>(
+                  stream: FirebaseFirestore.instance
+                    .collection(negara)
+                    .doc(negeri)
+                    .collection('help_center')
+                    .doc('customer_service')
+                    .collection('service_data')
+                    .where('admin_seen', isEqualTo: false)
+                    .snapshots()
+                    .map((snapshot) => snapshot.size),
+                  builder: (context, snapshot) {
+                    if (snapshot.connectionState == ConnectionState.waiting) {
+                      return const SizedBox(
+                        width: 40,
+                        child: Center(child: CircularProgressIndicator(strokeWidth: 2)),
+                      );
+                    }
+                    if (snapshot.hasError) {
+                      return const SizedBox(
+                        width: 40,
+                        child: Center(child: Icon(Icons.error, color: Colors.red)),
+                      );
+                    }
+                    return Container(
+                      width: 40,
+                      alignment: Alignment.center,
+                      child: Text(
+                        '${snapshot.data ?? 0}',
+                        style: const TextStyle(
+                          color: Colors.red,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18,
+                        ),
+                      ),
+                    );
+                  },
+                ),
+              ),
+            ],
+          ),
+          
+            Stack(// New driver
+              children: [
+                SizedBox(
+                  width:260,
+                  child: ElevatedButton(
+                    child: Text(
+                      'New Driver',
+                      
+                    ),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const NewDriver(),
+                        ),
+                      );
+                    }
+                  ),
+                ),
+              Positioned(// NUMBERING
+                right: 0,
+                top: 0,
+                bottom: 0,
+                child: StreamBuilder<int>(
+                  stream: FirebaseFirestore.instance
+                    .collection(negara)
+                    .doc(negeri)
+                    .collection('driver_account')
+                    .where('registration_approved', isEqualTo: false)
+                    .where('form2_completed', isEqualTo: true)
+                    .snapshots()
+                    .map((snapshot) => snapshot.size),
+                  builder: (context, snapshot) {
+                    if (snapshot.connectionState == ConnectionState.waiting) {
+                      return const SizedBox(
+                        width: 40,
+                        child: Center(child: CircularProgressIndicator(strokeWidth: 2)),
+                      );
+                    }
+                    if (snapshot.hasError) {
+                      return const SizedBox(
+                        width: 40,
+                        child: Center(child: Icon(Icons.error, color: Colors.red)),
+                      );
+                    }
+                    return Container(
+                      width: 40,
+                      alignment: Alignment.center,
+                      child: Text(
+                        '${snapshot.data ?? 0}',
+                        style: const TextStyle(
+                          color: Colors.red,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18,
+                        ),
+                      ),
+                    );
+                  },
+                ),
+              ),
+            ],
+          ),
+          
+          
+          
+          
           ],
         ),
       ),

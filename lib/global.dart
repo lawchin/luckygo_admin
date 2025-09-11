@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 // Global variables
 String negara = 'Malaysia';
 String negeri = 'Sabah';
+String bahasa = '';
 String currency = 'RM';
 String loggedUser = '';
 
@@ -13,3 +14,7 @@ TextEditingController areaNameController = TextEditingController();
 
 String senderPhoneNumber = '';
 String penghantar = '';
+String fullname = '';
+
+
+

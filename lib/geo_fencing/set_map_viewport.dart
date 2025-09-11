@@ -8,7 +8,7 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:http/http.dart' as http;
 import 'package:luckygo_admin/global.dart';
-import 'package:luckygo_admin/home_page.dart';
+import 'package:luckygo_admin/LandingPage/home_page.dart';
 import 'package:uuid/uuid.dart';
 
 class SetMapViewport extends StatefulWidget {
